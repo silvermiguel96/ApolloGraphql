@@ -9,7 +9,7 @@ const typeDefs = gql`
         """Esta es la descripción del curso"""
         descripcion: String!
         profesor: Profesor
-        rating: Float
+        rating: Float @deprecated( reason: "No queremos mas rankins")
         comentarios: [Comentario]
     }
 
