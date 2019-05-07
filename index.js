@@ -8,6 +8,7 @@ const typeDefs = require('./schema.js');
 const server = new ApolloServer({
   typeDefs
 })
+
 const app = express();
 server.applyMiddleware({
   app
