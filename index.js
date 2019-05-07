@@ -3,10 +3,13 @@ const bodyParser = require('body-parser');
 const { ApolloServer } = require('apollo-server-express');
 
 const typeDefs = require('./schema.js');
+const resolvers = require('./resolvers.js')
+
 
 
 const server = new ApolloServer({
-  typeDefs
+  typeDefs,
+  resolvers
 })
 
 const app = express();
