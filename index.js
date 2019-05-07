@@ -1,15 +1,19 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const { ApolloServer } = require('apollo-server-express');
 
 const typeDefs = require('./schema.js');
 const resolvers = require('./resolvers.js')
+const mocks = require('./mocks.js')
 
 
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  // resolvers,
+  mocks,
+  // La opcion false sirve para que los mocks por defecto cambien a el establecido
+  mockEntireSchema: false
 })
 
 const app = express();
