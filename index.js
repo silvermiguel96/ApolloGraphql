@@ -2,14 +2,17 @@ const express = require('express');
 // const bodyParser = require('body-parser');
 const { ApolloServer } = require('apollo-server-express');
 
-const typeDefs = require('./schema.js');
-const resolvers = require('./resolvers.js')
+const resolvers = require('./resolvers/resolvers')
 const mocks = require('./mocks.js')
+
+const Profesor = require('./schema/Profesor')
+const curso = require('././schema/Curso')
+const rootQUery = require('./schema/schema.js');
 
 require('./db/setup')
 
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: [rootQUery, Profesor, curso],
   resolvers,
   // mocks,
   // La opcion false sirve para que los mocks por defecto cambien a el establecido

@@ -1,5 +1,6 @@
-const Curso = require('./models/Curso')
-const Profesor = require('./models/Profesor')
+const Curso = require('../models/Curso')
+const Profesor = require('../models/Profesor')
+
 const resolvers = {
   Query: {
     cursos: () => Curso.query().eager('[profesor, comentarios]'),
