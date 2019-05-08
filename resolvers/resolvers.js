@@ -12,6 +12,10 @@ const resolvers = {
     profesorAdd: (_, args) => {
       // console.log(args)
       return Profesor.query().insert(args.profesor)
+    },
+    profesorEdit: (_, args) => {
+      return Profesor.query().patchAndFetchById(args.profesorId, args.profesor)
+
     }
   }
 }

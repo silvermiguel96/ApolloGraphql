@@ -7,9 +7,10 @@ const rootQUery = gql`
         curso(id: Int): Curso
         profesor(id: Int): Profesor
     }
-    
+
     type Mutation{
         profesorAdd(profesor: NuevoProfesor): Profesor
+        profesorEdit(profesorId: Int!, profesor: ProfesorEditable): Profesor
     }
 `
 module.exports = rootQUery
