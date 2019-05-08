@@ -6,14 +6,14 @@ const typeDefs = require('./schema.js');
 const resolvers = require('./resolvers.js')
 const mocks = require('./mocks.js')
 
-
+require('./db/setup')
 
 const server = new ApolloServer({
   typeDefs,
-  // resolvers,
-  mocks,
+  resolvers,
+  // mocks,
   // La opcion false sirve para que los mocks por defecto cambien a el establecido
-  mockEntireSchema: false
+  // mockEntireSchema: false
 })
 
 const app = express();
