@@ -14,6 +14,13 @@ require('./db/setup')
 const server = new ApolloServer({
   typeDefs: [rootQUery, Profesor, curso],
   resolvers,
+  formatError: (error) => {
+    return {
+      codigo: 'A43',
+      name: error.name,
+      mensaje: error.message
+    }
+  }
   // mocks,
   // La opcion false sirve para que los mocks por defecto cambien a el establecido
   // mockEntireSchema: false
