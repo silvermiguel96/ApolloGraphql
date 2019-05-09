@@ -11,6 +11,7 @@ const rootQUery = gql`
     type Mutation{
         profesorAdd(profesor: NuevoProfesor): Profesor
         profesorEdit(profesorId: Int!, profesor: ProfesorEditable): Profesor
+        profesorDelete(profesorId: Int!): Profesor
     }
 `
 module.exports = rootQUery
